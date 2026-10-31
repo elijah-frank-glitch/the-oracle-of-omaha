@@ -1,0 +1,17 @@
+{
+  "name": "the-oracle-of-omaha",
+  "version": "1.0.0",
+  "description": "Calculadora de interés compuesto y proyecciones de inversión: plan año por año, portafolios diversificados con Monte Carlo, 35 activos investigados y datos de mercado bajo demanda.",
+  "private": true,
+  "license": "MIT",
+  "author": "elijahgord <elijahgord@gmail.com>",
+  "keywords": ["interes-compuesto", "inversiones", "calculadora-financiera", "monte-carlo", "portafolio", "finanzas-personales"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "mercado": "node scraper.js SPY BTC-USD GC=F"
+  }
+}

@@ -1,0 +1,15 @@
+# Caché local de datos de mercado (se regenera con «Actualizar mercado»)
+/data/
+
+# Dependencias y artefactos (el proyecto no tiene dependencias, por si se añaden)
+node_modules/
+.vercel/
+
+# Configuración local de Claude Code (los agentes y la skill sí se versionan)
+.claude/settings.local.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+.env*
