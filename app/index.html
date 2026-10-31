@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Oracle of Omaha</title>
+  <link rel="icon" href="img/oraculo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/oraculo.css">
+</head>
+<body>
+  <!-- Emblema original: templo del oráculo cuyas columnas crecen como el interés compuesto, bajo unas gafas redondas de lectura (el inversor que lee informes). -->
+  <template id="logo-oraculo"><svg viewBox="0 0 64 64" aria-hidden="true" class="logo-svg">
+    <defs>
+      <linearGradient id="lg-oro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d27a"/><stop offset="1" stop-color="#c9952f"/></linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="30" fill="#0e1a2b" stroke="url(#lg-oro)" stroke-width="2.5"/>
+    <circle cx="32" cy="32" r="25.5" fill="none" stroke="#c9952f" stroke-opacity=".35" stroke-width="1"/>
+    <g fill="none" stroke="url(#lg-oro)" stroke-width="2.2" stroke-linecap="round">
+      <circle cx="24.5" cy="19" r="4.6"/><circle cx="39.5" cy="19" r="4.6"/><path d="M29.1 19.2 Q32 17.4 34.9 19.2"/>
+    </g>
+    <path d="M15 32 L32 25.5 L49 32 Z" fill="url(#lg-oro)"/>
+    <g fill="url(#lg-oro)">
+      <rect x="18" y="41" width="5" height="6" rx=".6"/><rect x="25.6" y="38" width="5" height="9" rx=".6"/>
+      <rect x="33.4" y="35.5" width="5" height="11.5" rx=".6"/><rect x="41" y="33.5" width="5" height="13.5" rx=".6"/>
+    </g>
+    <rect x="15" y="48" width="34" height="2.6" rx="1" fill="url(#lg-oro)"/>
+  </svg></template>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-logo" id="brand-logo"></span>
+      <div><strong>The Oracle of Omaha</strong><span>Proyecciones de inversión con interés compuesto</span></div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button role="tab" data-tab="proyeccion">Proyección</button>
+      <button role="tab" data-tab="portafolio">Portafolio y diversificación</button>
+      <button role="tab" data-tab="activos">Universo de activos</button>
+      <button role="tab" data-tab="macro">Macro y escenarios</button>
+    </nav>
+    <div class="actions">
+      <span id="estado-mercado" class="pill">Sin datos de mercado</span>
+      <button id="btn-plan" class="btn" title="Configurar o editar tu plan">⚙ Mi plan</button>
+      <button id="btn-actualizar" class="btn btn-primary"><span class="spin" aria-hidden="true"></span><span class="lbl">Actualizar mercado</span></button>
+      <button id="btn-tema" class="btn btn-icon" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema">◐</button>
+    </div>
+  </header>
+
+  <section id="veredicto" class="verdict" aria-live="polite"></section>
+
+  <main id="vista"></main>
+
+  <footer class="foot">
+    <span id="aviso"></span>
+    <span>Herramienta educativa. No constituye asesoría financiera. Rentabilidades pasadas no garantizan resultados futuros. App independiente, no afiliada a Warren Buffett ni a Berkshire Hathaway.</span>
+  </footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script>document.getElementById('brand-logo').innerHTML = document.getElementById('logo-oraculo').innerHTML;</script>
+  <script src="js/engine.js"></script>
+  <script src="js/widgets.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
